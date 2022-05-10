@@ -1,0 +1,68 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct aluno{
+    char nome[80];
+    int matricula;
+    
+}Aluno;
+
+void inicializa (int n, Aluno** tab){
+    for(int i = 0;i < 3; i++){
+        tab[i] = NULL;
+    }
+    }
+ 
+int leAluno (int n, Aluno** tab, int i){
+     
+        for(int i = 0 ; i < 3; i++){
+            if((i >= 0) && (i < n, Aluno ** tab [i] == NULL) ){
+                printf("Informe o NOME e a MATRÍCULA do aluno:");
+                scanf("%[^/n],%d",*tab[i]->nome,*tab[i]->matricula);
+            }
+        }
+    
+    if(tab[2] != NULL){
+        return (1);
+    }else{
+        return (0);
+    }
+}
+
+void imprimeAluno(int n, Aluno** tab, int i){
+    for(int i = 0;i < 3; i++){
+        if(tab[i]!= NULL){
+            printf("ALUNO [%d]/n NOME : %s /n MATRÍCULA : %d/n",tab->nome,tab->matricula);
+        }
+    }
+}
+
+void retiraAluno(int n, Aluno** tab, int i){
+    if(tab[i] != NULL){
+        tab[i] = NULL;
+    }
+}
+int main(int argc, char** argv) {
+    Aluno *TAB[3];
+    int teste = 0;
+    int p,n;
+    
+    printf("Informe tamanho do vetor: /n");
+    scanf("%d",&n);
+    
+    printf("Informe a posição em que deseja efetuar a ação: ");
+    scanf("%d",&p);
+    
+    void inicializa (int n, Aluno** TAB);
+    
+    teste = int leAluno (int n, Aluno** TAB, int );
+    
+    void imprimeAluno(int n, Aluno** TAB, int teste);
+    
+    void retiraAluno(int n, Aluno** tab, int teste);
+    
+    
+    return (EXIT_SUCCESS);
+}
+
