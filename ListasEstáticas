@@ -1,0 +1,88 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 10
+
+typedef struct lista{
+    int itens[MAX];;
+    int n;
+}Lista;
+
+void criarLista(Lista *l){
+    l->n=0;
+    
+}
+
+int estaVazia(Lista *l){
+    if(l -> n == 0){
+        return 1;
+    }else{
+        return 0;
+    }
+}
+
+int estaCheia(Lista *l){
+    if(l -> n == MAX){
+        return 1;
+    }else{
+        return 0 ;
+    }
+}
+
+void insereItem(Lista *l,int v){
+    if(!estaCheia(l)){
+        l -> itens[l->n] = v;
+        l -> n++;
+    }else{
+        printf("LISTA CHEIA");
+    }
+    
+}
+
+void imprimeLista(Lista *l){
+    if(!estaVazia(l)){
+        for(int i = 0; i < l->n;i++){
+            printf("POSIÇÃO [%d] || VALOR[%d] \n",i,l->itens[i]);
+        }
+    }else{
+        printf("LISTA VAZIA");
+    }
+}
+
+void removeItem(Lista *l, int v){
+    if(!estaVazia(l)&&(v < l->n)){
+        for(int i = v ; i < l->n ; i++){
+            l->itens[i] = l->itens[i+1];
+        }
+        l->n--;
+    }else{
+        printf("LISTA VAZIA");
+    }
+    
+}
+
+
+
+int main(int argc, char** argv) {
+
+    Lista lista;
+    int num,remove;
+    
+    
+    criarLista(&lista);
+    
+    num =1;
+    insereItem(&lista,num);
+    num = 9;
+    insereItem(&lista,num);
+    num = 7;
+    insereItem(&lista,num);
+    
+    imprimeLista(&lista);
+    
+    remove = 1;
+    removeItem(&lista,remove);
+    imprimeLista(&lista);
+    
+    return (0);
+}
+
